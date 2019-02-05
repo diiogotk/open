@@ -192,10 +192,8 @@ def processar(chat, message, platform):
 
     response = conversation.message(workspace_id=workspace_id, message_input={'text': message.decode()})
     
-
-    abcd = response['output']['generic'][0]['source']
-    abcnome = response['output']['generic'][0]['source']
-
+   
+    
     if(len(response['output']['text'])>0):
         for valx in response['output']['text']:
             retorno = valx
@@ -206,8 +204,10 @@ def processar(chat, message, platform):
                 print("send_message")
                 send_message(retorno, chat)
     else:
-        print('OIIIIII', abcd)
-        send_message_whastapp_i(abcd, abcnome, chat)
+         abcd =  response['output']['generic'][0]['source']
+         abcnome = response['output']['generic'][0]['source']
+         print('OIIIIII', abcd)
+         send_message_whastapp_i(abcd, abcnome, chat)
 
 def main():
     last_update_id = None
