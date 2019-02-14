@@ -1,0 +1,20 @@
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from time import sleep
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+import requests
+import pyautogui
+import os
+
+
+options = Options()
+options.set_headless(headless=True)
+browser = webdriver.Firefox(executable_path='C:\fire\geckodriver.exe')
+firefox_options=options
+url = "https://news.google.com/?hl=en-IN&gl=IN&ceid=IN:en"
+root = "https://news.google.com"
+browser.get('https://web.whatsapp.com')
+print('Scan and get started')
+sleep(10)
